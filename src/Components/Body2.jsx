@@ -36,7 +36,7 @@ const Body2 = () => {
       if (selectedFile && permission) {
         // Send POST request to upload file
         const response = await axios.post(
-          `http://www.tucsonmedtherapy.com/PDF/${pdfName}`,
+          `http://localhost:5000/PDF/${pdfName}`,
           selectedFile,
           {
             headers: {
@@ -63,12 +63,9 @@ const Body2 = () => {
   const handleDownload = async (pdfName) => {
     try {
       // Send GET request to download file
-      const response = await axios.get(
-        `http://www.tucsonmedtherapy.com/PDF/${pdfName}`,
-        {
-          responseType: "blob",
-        }
-      );
+      const response = await axios.get(`http://localhost:3000/PDF/${pdfName}`, {
+        responseType: "blob",
+      });
 
       if (response.status === 200) {
         const blob = response.data;
@@ -98,7 +95,7 @@ const Body2 = () => {
       <div className="flex justify-center mt-4 inputgradient">
         <input
           className="mt-1 px-3 py-2 inputgradientinside border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-1/3 rounded-md sm:text-sm focus:ring-1"
-          placeholder="Are You Mr. Wade Anderson?"
+          placeholder="Admin"
           type="text"
           onChange={handlePermissionChange}
         />
@@ -109,14 +106,14 @@ const Body2 = () => {
         <Card
           id="1"
           title="Amputee balance-agility-coordination"
-          pdfUrl="Amputee balance-agility-coordination.pdf"
+          pdfUrl="Amputee-balance-agility-coordination.pdf"
           cardImageUrl={card1img}
           onDownload={() =>
-            handleDownload("Amputee balance-agility-coordination.pdf")
+            handleDownload("Amputee-balance-agility-coordination.pdf")
           }
           onUpload={(selectedFile) =>
             handleFileUpload(
-              "Amputee balance-agility-coordination.pdf",
+              "Amputee-balance-agility-coordination.pdf",
               selectedFile
             )
           }
@@ -126,11 +123,11 @@ const Body2 = () => {
         <Card
           id="2"
           title="Amputee pregait-gait"
-          pdfUrl="Amputee pregait-gait.pdf"
+          pdfUrl="Amputee-pregait-gait.pdf"
           cardImageUrl={card2img}
-          onDownload={() => handleDownload("Amputee pregait-gait.pdf")}
+          onDownload={() => handleDownload("Amputee-pregait-gait.pdf")}
           onUpload={(selectedFile) =>
-            handleFileUpload("Amputee pregait-gait.pdf", selectedFile)
+            handleFileUpload("Amputee-pregait-gait.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -138,14 +135,14 @@ const Body2 = () => {
         <Card
           id="3"
           title="Amputee strengthening-stretching"
-          pdfUrl="Amputee strengthening-stretching.pdf"
+          pdfUrl="Amputee-strengthening-stretching.pdf"
           cardImageUrl={card3img}
           onDownload={() =>
-            handleDownload("Amputee strengthening-stretching.pdf")
+            handleDownload("Amputee-strengthening-stretching.pdf")
           }
           onUpload={(selectedFile) =>
             handleFileUpload(
-              "Amputee strengthening-stretching.pdf",
+              "Amputee-strengthening-stretching.pdf",
               selectedFile
             )
           }
@@ -155,11 +152,11 @@ const Body2 = () => {
         <Card
           id="4"
           title="Arm exercises sitting"
-          pdfUrl="Arm exercises sitting.pdf"
+          pdfUrl="Arm-exercises-sitting.pdf"
           cardImageUrl={card4img}
-          onDownload={() => handleDownload("Arm exercises sitting.pdf")}
+          onDownload={() => handleDownload("Arm-exercises-sitting.pdf")}
           onUpload={(selectedFile) =>
-            handleFileUpload("Arm exercises sitting.pdf", selectedFile)
+            handleFileUpload("Arm-exercises-sitting.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -167,11 +164,11 @@ const Body2 = () => {
         <Card
           id="5"
           title="Arm exercises supine"
-          pdfUrl="example5.pdf"
+          pdfUrl="Arm-exercises-supine.pdf"
           cardImageUrl={card5img}
-          onDownload={() => handleDownload("Arm exercises supine.pdf")}
+          onDownload={() => handleDownload("Arm-exercises-supine.pdf")}
           onUpload={(selectedFile) =>
-            handleFileUpload("Arm exercises supine.pdf", selectedFile)
+            handleFileUpload("Arm-exercises-supine.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -179,11 +176,11 @@ const Body2 = () => {
         <Card
           id="6"
           title="Balance exercises"
-          pdfUrl="Balance exercises.pdf"
+          pdfUrl="Balance-exercises.pdf"
           cardImageUrl={card6img}
-          onDownload={() => handleDownload("Balance exercises.pdf")}
+          onDownload={() => handleDownload("Balance-exercises.pdf")}
           onUpload={(selectedFile) =>
-            handleFileUpload("Balance exercises.pdf", selectedFile)
+            handleFileUpload("Balance-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -191,11 +188,11 @@ const Body2 = () => {
         <Card
           id="7"
           title="Fall prevention checklist"
-          pdfUrl="Fall prevention checklist.pdf"
+          pdfUrl="Fall-prevention-checklist.pdf"
           cardImageUrl={card7img}
-          onDownload={() => handleDownload("Fall prevention checklist.pdf")}
+          onDownload={() => handleDownload("Fall-prevention-checklist.pdf")}
           onUpload={(selectedFile) =>
-            handleFileUpload("Fall prevention checklist.pdf", selectedFile)
+            handleFileUpload("Fall-prevention-checklist.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -203,12 +200,11 @@ const Body2 = () => {
         <Card
           id="8"
           title="Hand theraputty exercises"
-          description="This is the description for Card 8"
-          pdfUrl="example8.pdf"
-          onDownload={() => handleDownload("Hand theraputty exercises.pdf")}
+          pdfUrl="Hand-theraputty-exercises.pdf"
+          onDownload={() => handleDownload("Hand-theraputty-exercises.pdf")}
           cardImageUrl={card8img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Hand theraputty exercises.pdf", selectedFile)
+            handleFileUpload("Hand-theraputty-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -216,11 +212,11 @@ const Body2 = () => {
         <Card
           id="9"
           title="Neck exercises"
-          pdfUrl="Neck exercises.pdf"
-          onDownload={() => handleDownload("Neck exercises.pdf")}
+          pdfUrl="Neck-exercises.pdf"
+          onDownload={() => handleDownload("Neck-exercises.pdf")}
           cardImageUrl={card9img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Neck exercises.pdf", selectedFile)
+            handleFileUpload("Neck-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -228,11 +224,11 @@ const Body2 = () => {
         <Card
           id="10"
           title="Shoulder isometric exercises"
-          pdfUrl="example10.pdf"
-          onDownload={() => handleDownload("Shoulder isometric exercises.pdf")}
+          pdfUrl="Shoulder-isometric-exercises.pdf"
+          onDownload={() => handleDownload("Shoulder-isometric-exercises.pdf")}
           cardImageUrl={card10img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Shoulder isometric exercises.pdf", selectedFile)
+            handleFileUpload("Shoulder-isometric-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -240,11 +236,11 @@ const Body2 = () => {
         <Card
           id="11"
           title="Sitting exercises"
-          pdfUrl="Sitting exercises.pdf"
-          onDownload={() => handleDownload("Sitting exercises.pdf")}
+          pdfUrl="Sitting-exercises.pdf"
+          onDownload={() => handleDownload("Sitting-exercises.pdf")}
           cardImageUrl={card11img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Sitting exercises.pdf", selectedFile)
+            handleFileUpload("Sitting-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -252,14 +248,14 @@ const Body2 = () => {
         <Card
           id="12"
           title="Spinal stabilization exercises complete"
-          pdfUrl="Spinal stabilization exercises complete.pdf"
+          pdfUrl="Spinal-stabilization-exercises-complete.pdf"
           onDownload={() =>
-            handleDownload("Spinal stabilization exercises complete.pdf")
+            handleDownload("Spinal-stabilization-exercises-complete.pdf")
           }
           cardImageUrl={card12img}
           onUpload={(selectedFile) =>
             handleFileUpload(
-              "Spinal stabilization exercises complete.pdf",
+              "Spinal-stabilization-exercises-complete.pdf",
               selectedFile
             )
           }
@@ -269,14 +265,14 @@ const Body2 = () => {
         <Card
           id="13"
           title="Spinal stabilization exercises simple"
-          pdfUrl="Spinal stabilization exercises simple.pdf"
+          pdfUrl="Spinal-stabilization-exercises-simple.pdf"
           onDownload={() =>
-            handleDownload("Spinal stabilization exercises simple.pdf")
+            handleDownload("Spinal-stabilization-exercises-simple.pdf")
           }
           cardImageUrl={card13img}
           onUpload={(selectedFile) =>
             handleFileUpload(
-              "Spinal stabilization exercises simple.pdf",
+              "Spinal-stabilization-exercises-simple.pdf",
               selectedFile
             )
           }
@@ -286,11 +282,11 @@ const Body2 = () => {
         <Card
           id="14"
           title="Standing exercises"
-          pdfUrl="Standing exercises.pdf"
-          onDownload={() => handleDownload("Standing exercises.pdf")}
+          pdfUrl="Standing-exercises.pdf"
+          onDownload={() => handleDownload("Standing-exercises.pdf")}
           cardImageUrl={card14img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Standing exercises.pdf", selectedFile)
+            handleFileUpload("Standing-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -298,11 +294,11 @@ const Body2 = () => {
         <Card
           id="15"
           title="Supine exercises"
-          pdfUrl="Supine exercises.pdf"
-          onDownload={() => handleDownload("Supine exercises.pdf")}
+          pdfUrl="Supine-exercises.pdf"
+          onDownload={() => handleDownload("Supine-exercises.pdf")}
           cardImageUrl={card15img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Supine exercises.pdf", selectedFile)
+            handleFileUpload("Supine-exercises.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -310,14 +306,14 @@ const Body2 = () => {
         <Card
           id="16"
           title="Total Knee Replacement exercises"
-          pdfUrl="Total Knee Replacement exercises.pdf"
+          pdfUrl="Total-Knee-Replacement-exercises.pdf"
           onDownload={() =>
-            handleDownload("Total Knee Replacement exercises.pdf")
+            handleDownload("Total-Knee-Replacement-exercises.pdf")
           }
           cardImageUrl={card16img}
           onUpload={(selectedFile) =>
             handleFileUpload(
-              "Total Knee Replacement exercises.pdf",
+              "Total-Knee-Replacement-exercises.pdf",
               selectedFile
             )
           }
@@ -328,11 +324,11 @@ const Body2 = () => {
         <Card
           id="17"
           title="Total knee replacement FAQ"
-          pdfUrl="Total knee replacement FAQ.pdf"
-          onDownload={() => handleDownload("Total knee replacement FAQ.pdf")}
+          pdfUrl="Total-knee-replacement-FAQ.pdf"
+          onDownload={() => handleDownload("Total-knee-replacement-FAQ.pdf")}
           cardImageUrl={card17img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Total knee replacement FAQ.pdf", selectedFile)
+            handleFileUpload("Total-knee-replacement-FAQ.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -340,11 +336,11 @@ const Body2 = () => {
         <Card
           id="18"
           title="Trochanteric bursitis"
-          pdfUrl="Trochanteric bursitis.pdf"
-          onDownload={() => handleDownload("Trochanteric bursitis.pdf")}
+          pdfUrl="Trochanteric-bursitis.pdf"
+          onDownload={() => handleDownload("Trochanteric-bursitis.pdf")}
           cardImageUrl={card18img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Trochanteric bursitis.pdf", selectedFile)
+            handleFileUpload("Trochanteric-bursitis.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}
@@ -352,11 +348,11 @@ const Body2 = () => {
         <Card
           id="19"
           title="Progress Note"
-          pdfUrl="Progress Note.pdf"
-          onDownload={() => handleDownload("Progress Note.pdf")}
+          pdfUrl="Progress-Note.pdf"
+          onDownload={() => handleDownload("Progress-Note.pdf")}
           cardImageUrl={card19img}
           onUpload={(selectedFile) =>
-            handleFileUpload("Progress Note.pdf", selectedFile)
+            handleFileUpload("Progress-Note.pdf", selectedFile)
           }
           permission={permission}
           onPermissionChange={handlePermissionChange}

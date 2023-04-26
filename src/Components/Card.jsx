@@ -32,7 +32,7 @@ function Card({ title, pdfUrl, onDownload, permission, cardImageUrl }) {
       try {
         // Send a POST request to the server with the file data
         const res = await axios.post(
-          `http://www.tucsonmedtherapy.com/PDF/${pdfUrl}`,
+          `http://localhost:5000/PDF/${pdfUrl}`,
           formData
         );
         console.log(res);
@@ -67,7 +67,7 @@ function Card({ title, pdfUrl, onDownload, permission, cardImageUrl }) {
           </button>
         </div>
 
-        {permission === "ExerciseIsGood" && ( // Render file upload input only if permission matches
+        {permission === "Password" && ( // Render file upload input only if permission matches
           <form
             onSubmit={uploadFile}
             className="flex flex-col items-center justify-center space-y-4 mt-5"

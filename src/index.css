@@ -5,10 +5,31 @@
 .textblue{
   color: rgb(0, 68, 124);
 }
+.textbluenav{
+  color: rgb(0, 68, 124);
+}
 .textgreen{
   color: rgb(116, 162, 82);
   word-spacing:  10px;
   letter-spacing: 10px;
+}
+.textgreennav{
+  color: rgb(116, 162, 82);
+  word-spacing:  10px;
+  letter-spacing: 10px;
+}
+@media (max-width: 640px){
+.textgreennav{
+  word-spacing:  0px;
+  letter-spacing: 0px;
+  white-space: nowrap;
+  font-size: 20px;
+}
+.textbluenav{
+  white-space: nowrap;
+  font-size: 25px;
+}
+  
 }
 .textgreenlink{
   color: rgb(116, 162, 82);

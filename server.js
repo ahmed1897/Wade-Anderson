@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://www.tucsonmedtherapy.com/", // Replace with the origin of your client application
+  origin: "http://localhost:3000", // Replace with the origin of your client application
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
